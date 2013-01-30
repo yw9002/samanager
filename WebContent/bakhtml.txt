@@ -1,0 +1,6 @@
+**顶部横条**
+<div id="selftop">
+	<div class="ltitle"></div>
+    <div class="rtitle"></div>
+    <div class="titleb">科研项目录入</div>
+</div>

@@ -1,0 +1,66 @@
+/* CSS Document */
+*{
+	padding:0px;
+	margin:0px;
+	font-size:12px;
+}
+#selfcontainer{
+	margin:2px;
+}
+#selftop{
+	min-width:660px;
+	width:100%;
+	text-align:center;
+	font-weight:bold;
+	font-size:14px;
+	line-height:25px;
+}
+.ltitle{
+	background-image:url(../images/global/leftt.gif);
+	background-repeat:no-repeat;
+	width:5px;
+	height:27px;
+	float:left;
+}
+.rtitle{
+	float:right;
+	background-image:url(../images/global/rightt.gif);
+	background-repeat:no-repeat;
+	width:5px;
+	height:27px;
+}
+.titleb{
+	background-image:url(../images/global/tback.gif);
+	background-repeat:repeat-x;
+	height:27px;
+}
+#selfcenter{
+	width:100%;
+}
+#selftbox{
+	border-left:1px solid #e2eff7;
+	border-bottom:1px solid #e2eff7;
+	border-right:1px solid #e2eff7;
+	height:300px;
+}
+.myTable{
+	min-width:660px;
+	width:100%;
+}
+.myTable .bc{
+	height:30px;
+	background-color:#fefcef;
+}
+.myTable .fc{
+	height:80px;
+	background-color:#e7f3ff;
+	font-weight:bold;
+}
+.myTable,.myTable td {
+	line-height:30px;
+    border:1px solid #e2eff7;   
+    border-collapse:collapse;  
+}
+.myTable td{
+	padding-left:10px;
+}

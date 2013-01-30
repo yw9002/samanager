@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.objectFactory" value="spring"/>
+
+    <package name="default" extends="struts-default">
+    	<!-- 登陆处理 -->
+    	<action name="loginAction" class="UserAction" method="login">
+    		<result name="success" type="redirect">main.jsp</result>
+    		<result name="error">userError.html</result>
+    	</action>
+    	<!-- 用户管理 -->
+    	<action name="getUserList" class="UserAction" method="getUList">
+    		<result name="success">userManager.jsp</result>
+    	</action>
+    	<action name="editUser" class="UserAction" method="findUserById">
+    		<result name="success">editUser.jsp</result>
+    	</action>
+    	<action name="saveUser" class="UserAction" method="saveUser">
+    		<result name="success">sucSave.jsp</result>
+    	</action>
+    	<action name="delUser" class="UserAction" method="delUser">
+    		<result name="success">sucSave.jsp</result>
+    	</action>
+		<action name="addUser" class="UserAction" method="getRoleList">
+			<result>addUser.jsp</result>
+		</action>
+		<!-- 科研项目管理  -->
+		<action name="toAddPro" class="ResearchProjectsAction" method="toAddProPage">
+    		<result name="success">researchProjectAdd.jsp</result>
+    	</action>
+    	<action name="toUpdatePro" class="ResearchProjectsAction" method="update">
+    		<result name="success">researchProjectUpdate.jsp</result>
+    	</action>
+    	<action name="toDelPro" class="ResearchProjectsAction" method="del">
+    		<result name="success">sucSave.jsp</result>
+    	</action>
+    	<action name="*ResearchProjects" class="ResearchProjectsAction" method="{1}">
+    		<result name="success">sucSave.jsp</result>
+    		<result name="error">error.html</result>
+    	</action>
+    	<action name="queryResearchProjectsList" class="ResearchProjectsAction" method="queryResearchProjectList">
+    		<result name="success">researchProjectManager.jsp</result>
+    	</action>
+    	<!-- 文件上传、下载、删除管理  -->
+    	<action name="upload" class="FileAction" method="upload">
+    		<result name="success">sucUpload.html</result>
+    		<result name="input">upload.jsp</result>
+    		<interceptor-ref name="fileUpload">
+			<param name="maximumSize">20971520</param>
+			<!--<param name="allowedTypes">image/bmp,image/x-png,image/png,image/gif,image/jpeg,image/jpg,image/pjpeg</param> -->
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+    	</action>
+    	<action name="download" class="FileAction" method="download">
+			<result name="success" type="stream">
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="inputName">downloadFile</param>
+			</result>
+		</action>
+		<action name="deletfile" class="FileAction" method="delFile">
+			<result name="success">fileList.jsp</result>
+		</action>
+    	<action name="getFileList" class="FileAction" method="getFileList">
+    		<result name="success">fileList.jsp</result>
+    	</action>
+    	<!-- 教师管理 -->
+    	<action name="teacherManager" class="TeacherAction" method="toManager">
+    		<result name="success">teacherManager.jsp</result>
+    	</action>
+    	<action name="teacherToAdd" class="TeacherAction" method="toAdd">
+    		<result name="success">teacherAdd.jsp</result>
+    	</action>
+    	<action name="teacherToUpdate" class="TeacherAction" method="toUpdate">
+    		<result name="success">teacherUpdate.jsp</result>
+    	</action>
+    	<action name="teacherSave" class="TeacherAction" method="saveTeacher">
+    		<result name="success">sucSave.jsp</result>
+    	</action>
+    	<action name="teacherDel" class="TeacherAction" method="delTeacher">
+    		<result name="success">sucSave.jsp</result>
+    	</action>
+    	<action name="teacherUpdate" class="TeacherAction" method="toUpdate">
+    		<result name="success">teacherUpdate.jsp</result>
+    	</action>
+    	<action name="queryTeacherName" class="TeacherAction" method="queryTeacherName">
+    		<result name="success">teacherNameList.jsp</result>
+    	</action>
+    	<!--期刊管理 -->
+    	<action name="periodicalManager" class="PeriodicalAction" method="findPeriodidcalList">
+    		<result name="success">periodicalManager.jsp</result>
+    	</action>
+    	<action name="periodicalToAdd" class="PeriodicalAction">
+    		<result name="success">periodicalAdd.jsp</result>
+    	</action>
+    	<action name="periodicalToUpdate" class="PeriodicalAction" method="toUpdate">
+    		<result name="success">periodicalUpdate.jsp</result>
+    	</action>
+    	<action name="periodicalSave" class="PeriodicalAction" method="savePeriodical">
+    		<result name="success">sucSave.jsp</result>
+    	</action>
+    	<action name="periodicalDel" class="PeriodicalAction" method="delPeriodical">
+    		<result name="success">sucSave.jsp</result>
+    	</action>
+    </package>
+</struts>

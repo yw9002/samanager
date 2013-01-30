@@ -1,0 +1,381 @@
+<form id="pagerForm" method="post" action="demo_page1.html">
+	<input type="hidden" name="status" value="${param.status}">
+	<input type="hidden" name="keywords" value="${param.keywords}" />
+	<input type="hidden" name="pageNum" value="1" />
+	<input type="hidden" name="numPerPage" value="${model.numPerPage}" />
+	<input type="hidden" name="orderField" value="${param.orderField}" />
+</form>
+
+
+<div class="pageHeader">
+	<form onsubmit="return navTabSearch(this);" action="demo_page1.html" method="post">
+	<div class="searchBar">
+		<!--<ul class="searchContent">
+			<li>
+				<label>我的客户：</label>
+				<input type="text"/>
+			</li>
+			<li>
+			<select class="combox" name="province">
+				<option value="">所有省市</option>
+				<option value="北京">北京</option>
+				<option value="上海">上海</option>
+				<option value="天津">天津</option>
+				<option value="重庆">重庆</option>
+				<option value="广东">广东</option>
+			</select>
+			</li>
+		</ul>
+		-->
+		<table class="searchContent">
+			<tr>
+				<td>项目编号：<input type="text" name="keyword" /></td>
+                <td>项&nbsp;目&nbsp;名&nbsp;称&nbsp;：<input type="text" name="keyword" /></td>
+                <td>项目参与人：<input type="text" name="keyword" /></td>
+                <td>
+                	<select class="combox" name="province">
+						<option value="">项目类型</option>
+						<option value="北京">北京</option>
+						<option value="上海">上海</option>
+						<option value="天津">天津</option>
+						<option value="重庆">重庆</option>
+						<option value="广东">广东</option>
+					</select>
+                </td>
+				<td>项目负责人：<input type="text" name="keyword" /></td>
+			</tr>
+            <tr>
+				<td>资助机构：<input type="text" name="keyword" /></td>
+                <td>项目负责人：<input type="text" name="keyword" /></td>
+                <td colspan="2">
+					立&nbsp;项&nbsp;时&nbsp;间&nbsp;：<input type="text" name="keyword" />&nbsp;-&nbsp;<input type="text" name="keyword" />
+				</td>
+                <td>&nbsp;
+					
+				</td>
+			</tr>
+		</table>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="delete" href="demo/common/ajaxDone.html?uid={sid_user}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+			<li><a class="edit" href="demo_page4.html?uid={sid_user}" target="navTab"><span>修改</span></a></li>
+			<li class="line">line</li>
+			<li><a class="icon" href="common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="138">
+		<thead>
+			<tr>
+				<th style="width:60px"><center>项目编号</center></th>
+				<th style="width:220px"><center>项目名称</center></th>
+				<th style="width:169px"><center>项目类型</center></th>
+				<th style="width:45px"><center>负责人</center></th>
+				<th><center>项目参与人</center></th>
+				<th style="width:150px"><center>资助机构</center></th>
+				<th style="width:60px"><center>资助(万)</center></th>
+				<th style="width:60px"><center>配套(万)</center></th>
+				<th style="width:60px"><center>期限</center></th>
+				<th style="width:135px"><center>批文号</center></th>
+				<th><center>立项时间</center></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+			<tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+			<tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+			<tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+			<tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+			<tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+			<tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+			<tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+			<tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+			<tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+            <tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+            <tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+            <tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+            <tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+            <tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+            <tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+            <tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+            <tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+            <tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+            <tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+            <tr target="sid_user" rel="1">
+				<td>11JJ3074</td>
+				<td>无线多媒体传感器网络中基于跨层优化的QoS保障机制研究</td>
+				<td>湖南省自然科学基金一般项目</td>
+				<td>袁辉勇</td>
+				<td>羊四清、刘浩、刘永逸、刘伟群、彭智朝、胡楚然</td>
+				<td>湖南省自然科学基金委员会</td>
+				<td>3.00</td>
+				<td>3.00</td>
+				<td>211-2013</td>
+				<td>湘基金委字【2011】1</td>
+				<td>2011.7.19</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+				<option value="20">20</option>
+				<option value="50">50</option>
+				<option value="100">100</option>
+				<option value="200">200</option>
+			</select>
+			<span>条，共${totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="200" numPerPage="20" pageNumShown="10" currentPage="1"></div>
+
+	</div>
+</div>

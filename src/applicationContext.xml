@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:mysql://localhost:3306/samanager</value>
+		</property>
+		<property name="username">
+			<value>root</value>
+		</property>
+		<property name="password">
+			<value>root</value>
+		</property>
+	</bean>
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+	 	<property name="dataSource">
+	 		<ref bean="dataSource"/>
+	 	</property> 
+	</bean>
+	<bean id="NamedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate" scope="singleton">
+		<constructor-arg ref="dataSource"></constructor-arg>
+	</bean>
+	<bean id="DBUtils" class="com.yanshare.utils.DBUtils">
+		<property name="namedParameterJdbcTemplate">
+			<ref bean="NamedParameterJdbcTemplate"/>
+		</property>
+	</bean>
+	<bean id="userDao" class="com.yanshare.dao.UserDaoImpl" autowire="byType"/>
+	<bean id="userService" class="com.yanshare.service.UserServiceImpl" autowire="byType"/>
+	<bean id="UserAction" class="com.yanshare.action.UserAction" scope="prototype" autowire="byType"/>
+	<bean id="ResearchProjectDao" class="com.yanshare.dao.ResearchProjectDaoImpl" autowire="byType"/>
+	<bean id="ResearchProjectService" class="com.yanshare.service.ResearchProjectServiceImpl" autowire="byType"/>
+	<bean id="ResearchProjectsAction" class="com.yanshare.action.ResearchProjectsAction" autowire="byType"/>
+	<bean id="FileDao" class="com.yanshare.dao.FileDaoImpl" autowire="byType"/>
+	<bean id="FileService" class="com.yanshare.service.FileServiceImpl" autowire="byType"/>
+	<bean id="FileAction" class="com.yanshare.action.FileAction" autowire="byType"/>
+	<bean id="TeacherDao" class="com.yanshare.dao.TeacherDaoImpl" autowire="byType"/>
+	<bean id="TeacherService" class="com.yanshare.service.TeacherServiceImpl" autowire="byType"/>
+	<bean id="TeacherAction" class="com.yanshare.action.TeacherAction" autowire="byType"/>
+	<bean id="PeriodicalDao" class="com.yanshare.dao.PeriodicalDaoImpl" autowire="byType"/>
+	<bean id="PeriodicalService" class="com.yanshare.service.PeriodicalServiceImpl" autowire="byType"/>
+	<bean id="PeriodicalAction" class="com.yanshare.action.PeriodicalAction" autowire="byType"/>
+</beans>
